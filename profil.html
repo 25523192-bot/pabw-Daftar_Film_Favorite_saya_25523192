@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<!--
-  KERANGKA AWAL — Halaman Profil Saya
-  PABW 2026/2027 · Pertemuan 3
 
-  Cara pakai:
-  1. Salin berkas ini, ganti nama menjadi profil.html
-  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
-  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
-  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
-
-  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
-  komentar itu adalah daftar periksa Anda sendiri.
--->
 <html lang="id">
 <head>
   <title>Film Favorite Saya</title>
+
        <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Judul halaman Anda</title>
+ 
+  <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+
 </head>
 <body>
 
    <header>
-       <h1> Film Favorite Saya </h1>
-        <nav aria-label="Navigasi Utama">
-          <ul>
-               <li><a href ="#Bagian-1" >Daftar Film</a></li>
-               <li><a href ="#Bagian-2" >Rating saya</a></li>
-               <li><a href ="#footer" >Footer</a></li>
-               
-          </ul>
-      </nav>
+        
+        <div class="header-baris">
+             <h1> Film Favorite Saya </h1>
+             <nav aria-label="Navigasi Utama">
+                  <ul>
+                       <li><a href ="#Bagian-1" >Daftar Film</a></li>
+                       <li><a href ="#Bagian-2" >Rating saya</a></li>
+                       <li><a href ="#footer" >Footer</a></li>
+                       
+                       <input type="checkbox" id="tema" class="pengalih-tema">
+                     <label for="tema" class="tombol-tema">Tema gelap</label>
+                    </ul>
+               </nav>
+</div>
      </header>
         
 
