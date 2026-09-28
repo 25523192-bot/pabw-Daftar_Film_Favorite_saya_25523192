@@ -41,6 +41,19 @@ harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
 ## Pertemuan 5 — Front-end Foundation (Layout Modern: Flexbox dan Grid)
 
+┌──────────────────────────────┐
+│            Header            │
+├──────────────┬───────────────┤
+│              │               │
+│  Daftar Film │    Konten     │
+│              │               │
+│  Rating Saya │    Poster     │
+│              │   Deskripsi   │
+│              │               │
+├──────────────┴───────────────┤
+│            Footer            │
+└──────────────────────────────┘
+
 - Layout halaman menggunakan Grid.
 - Navbar menggunakan Flexbox.
 - Galeri menggunakan Grid agar menyesuaikan ukuran layar.
