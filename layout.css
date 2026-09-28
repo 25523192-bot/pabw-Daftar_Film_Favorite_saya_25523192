@@ -1,3 +1,21 @@
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
+.isi {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  grid-template-areas:
+    "sisi utama"
+    "sisi bawah";
+}
+.sisi  { grid-area: sisi; }
+.utama { grid-area: utama; }
+
+
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
@@ -51,9 +69,10 @@ main {
 }
  
 footer {
-  margin-top: var(--space-6);
   padding-block: var(--space-4);
   border-top: 1px solid var(--color-border);
-  color: var(--color-fg);       /* hindari abu pucat yang gagal kontras */
+  color: var(--color-fg);
   font-size: var(--text-sm);
 }
+
+

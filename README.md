@@ -39,3 +39,15 @@ Kriteria selesai saya: mengubah --color-primary di satu baris
 harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
 
+## Pertemuan 5 — Front-end Foundation (Layout Modern: Flexbox dan Grid)
+
+- Layout halaman menggunakan Grid.
+- Navbar menggunakan Flexbox.
+- Galeri menggunakan Grid agar menyesuaikan ukuran layar.
+- Jarak antar elemen menggunakan gap.
+- Cek tampilan pada 360 px dan 1 280 px.
+
+## Catatan penggunaan AI
+Membantu memahami pembahasan, penempatan kode, mengecek kode agar sesuai dengan worksheet, dan membuat README.
+
+
