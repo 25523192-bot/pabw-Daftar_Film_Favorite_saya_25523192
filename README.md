@@ -64,3 +64,12 @@ harus mengubah warna tombol, tautan, judul, dan garis fokus.
 Membantu memahami pembahasan, penempatan kode, mengecek kode agar sesuai dengan worksheet, dan membuat README.
 
 
+## Pertemuan 6 — Front-end Foundation (Responsive Mobile-First dan Komponen UI)
+
+Pada tugas ini saya menerapkan:
+- Viewport dan gaya dasar
+- Responsive layout dengan breakpoint
+- Penyesuaian gambar dan tabel
+- Pengujian pada ukuran 360px, 768px, dan 1280px
+
+AI digunakan sebagai bantuan untuk memahami materi, penempatan kode, dan pengecekan hasil responsive, Pembuatan README.

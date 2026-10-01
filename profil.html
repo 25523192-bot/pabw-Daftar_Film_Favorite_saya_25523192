@@ -2,10 +2,12 @@
 
 <html lang="id">
 <head>
+
   <title>Film Favorite Saya</title>
 
        <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Judul halaman Anda</title>
  
   <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
@@ -14,6 +16,9 @@
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="komponen.css">
   <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  
 
 </head>
 
@@ -40,74 +45,96 @@
         
 
   <main class="isi">
-       <section id = "Bagian-1"> 
-         <h2>Daftar Film</h2>
-         <table>
-          <caption>Film Favorite</caption>
-          <thead>
-               <tr>
-                    <th scope="col">Judul</th>
-                    <th scope="col">Tahun</th>
-                    <th scope="col">Genre</th>
-               </tr>
-          </thead>
-         
-         <tbody>
+
+  <section class="sisi">
+
+    <section id="Bagian-1">
+      <h2>Daftar Film</h2>
+
+      <div class="table-wrap">
+        <table>
+        <caption>Film Favorite</caption>
+        <thead>
           <tr>
-               <td>Godzilla Minus One</td>
-               <td>2023</td>
-               <td>Action</td>
+            <th scope="col">Judul</th>
+            <th scope="col">Tahun</th>
+            <th scope="col">Genre</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Godzilla Minus One</td>
+            <td>2023</td>
+            <td>Action</td>
           </tr>
 
           <tr>
-               <td>Scream</td>
-               <td>1996</td>
-               <td>Horror,Mystery</td>
+            <td>Scream</td>
+            <td>1996</td>
+            <td>Horror,Mystery</td>
           </tr>
 
           <tr>
-               <td>Halloween</td>
-               <td>1978</td>
-               <td>horror</td>
+            <td>Halloween</td>
+            <td>1978</td>
+            <td>horror</td>
           </tr>
-         </tbody>
-       </table>
+        </tbody>
+      </table>
 
-        <figure>
-          <img src="Halloween.jpeg"
-               alt="Poster film Halloween(1978)"
-               width="520"
-               height="500"
-               loading="lazy">
-          <figcaption>Poster film favorite</figcaption>
-        </figure>
-     </section>
+      
+      </div>
+    </section>
 
+    <section id="Bagian-2">
+      <h2>Rating Saya</h2>
 
-       <section id = "Bagian-2">
-          <h2>Rating Saya</h2>
+      <form action="/simpan" method="post">
 
-          <form action="/simpan" method="post">
-               <p>
-                    <label for="nama">Nama</label>
-                    <input type="text" id="nama" name="nama" required>
-               </p>
+        <p>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" required>
+        </p>
 
-               <p>
-                    <label for="rating">Rating (1-10)</label>
-                    <input type="number" id="rating" name="rating" min="1" max="10" required>
-               </p>
+        <p>
+          <label for="rating">Rating (1-10)</label>
+          <input type="number" id="rating" name="rating" min="1" max="10" required>
+        </p>
 
-               <p>
-                    <label for="komentar">Komentar</label>
-                    <input type="text" id="komentar" name="komentar">
-               </p>
-               <button type="submit">Simpan</button>
-          </form>
-       </section>
+        <p>
+          <label for="komentar">Komentar</label>
+          <input type="text" id="komentar" name="komentar">
+        </p>
+
+        <button type="submit">Simpan</button>
+
+      </form>
+    </section>
+
+  </section>
+
+  <section class="kartu">
+
+    <figure>
+      <img src="Halloween.jpeg"
+           alt="Poster film Halloween(1978)"
+           width="520"
+           height="500"
+           loading="lazy">
+      <figcaption>Poster film favorite</figcaption>
+    </figure>
+
+    <h2>Deskripsi Film</h2>
+
+    <p>
+      Halloween adalah film horor tahun 1978 yang menceritakan
+      Michael Myers dan kejadian yang terjadi pada malam Halloween.
+    </p>
+
+  </section>
 
 </main>
-
 
   <footer id="footer">
      <p>Ananda Farrel Saputra-25523192-2026</p>
