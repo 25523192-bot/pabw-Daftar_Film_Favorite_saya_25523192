@@ -73,3 +73,10 @@ Pada tugas ini saya menerapkan:
 - Pengujian pada ukuran 360px, 768px, dan 1280px
 
 AI digunakan sebagai bantuan untuk memahami materi, penempatan kode, dan pengecekan hasil responsive, Pembuatan README.
+
+
+## Pertemuan 8 — Front-end Foundation (JavaScript Modern: ES6+)
+
+AI digunakan sebagai bantuan dalam memahami materi dan mengecek kode selama pengerjaan Worksheet P8.
+
+Pengerjaan, pengujian kode, dan penyesuaian data dilakukan sendiri.
