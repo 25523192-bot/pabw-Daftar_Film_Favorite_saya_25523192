@@ -1,3 +1,10 @@
+
+export const daftarFilm = [
+    { judul: "Godzilla Minus One", tahun: 2023, genre: "Action" },
+    { judul: "Scream", tahun: 1996, genre: "Horror, Mystery" },
+    { judul: "Halloween", tahun: 1978, genre: "Horror" }
+];
+
 const profil = {
     nama: "Ananda Farrel Saputra",
     peran: "Mahasiswa Informatika yang memiliki daftar film favorite",
@@ -6,11 +13,7 @@ const profil = {
 
 const jumlahFilm = 3;
 
-const daftarFilm = [
-    { judul: "Godzilla Minus One", tahun: 2023, genre: "Action" },
-    { judul: "Scream", tahun: 1996, genre: "Horror, Mystery" },
-    { judul: "Halloween", tahun: 1978, genre: "Horror" }
-];
+
 
 console.log(typeof profil.nama);
 console.log(typeof jumlahFilm);
