@@ -1,4 +1,4 @@
-/* dasar: berlaku di semua lebar */
+/* Aturan responsif untuk tata letak halaman dan galeri. */
 .content {
   display: grid;
   grid-template-columns: 1fr;
@@ -11,12 +11,16 @@
   gap: var(--space-4);
 }
 
+/* Layar kecil: daftar, poster, lalu rating. .sisi dibuka agar isinya
+   menjadi item grid tersendiri pada layout satu kolom. */
 .isi {
-  grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     "film"
-    "kartu"
+    "utama"
     "rating";
+  gap: var(--space-4);
 }
 
 .sisi {
@@ -25,40 +29,54 @@
 
 #Bagian-1 {
   grid-area: film;
+  min-width: 0;
 }
 
-.kartu {
-  grid-area: kartu;
+#detail-film {
+  grid-area: utama;
+  min-width: 0;
+  width: 100%;
+  flex: initial;
 }
 
 #Bagian-2 {
   grid-area: rating;
-}
-
-/* tablet: galeri dua kolom */
-@media (min-width: 48rem) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+  min-width: 0;
 }
 
 .isi > * {
   min-width: 0;
 }
 
-
-@media (min-width: 60rem) {
-
+/* Tablet dan layar lebih lebar: sisi kiri untuk daftar/rating,
+   sisi kanan khusus satu poster besar. */
+@media (min-width: 36rem) {
   .isi {
-    grid-template-columns: 16rem 1fr;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     grid-template-areas: "sisi utama";
     align-items: start;
   }
+
   .sisi {
     display: block;
     grid-area: sisi;
+    min-width: 0;
   }
 
-  .kartu {
+  #detail-film {
     grid-area: utama;
+  }
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60rem) {
+  .isi {
+    grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
   }
 
   .content {

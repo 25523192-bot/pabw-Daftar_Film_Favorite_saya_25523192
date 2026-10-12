@@ -49,8 +49,10 @@ input:user-invalid {
 }
  
 /* Pesan galat: sembunyikan selama belum tidak-sah, tampilkan saat perlu */
-.pesan-galat       { display: none; color: var(--color-danger); font-size: var(--text-sm); }
-.form-kolom:has(input:user-invalid) .pesan-galat { display: block; }
+.pesan-galat {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
 
 .galeri {
   display: grid;
@@ -73,3 +75,68 @@ input:user-invalid {
 
 .kartu__isi { min-width: 0; }
 .kartu__judul { overflow-wrap: anywhere; }
+
+#filter button.aktif {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+
+#daftar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-4);
+}
+
+#daftar .kartu {
+  min-width: 0;
+  align-content: start;
+  overflow-wrap: anywhere;
+}
+
+#daftar .kartu img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+#daftar .kartu__judul {
+  overflow-wrap: anywhere;
+}
+
+#daftar .kartu__deskripsi {
+  line-height: 1.6;
+}
+
+/* Kartu daftar film dapat dipilih untuk mengganti poster di sebelah kanan. */
+#daftar .kartu {
+  width: 100%;
+  flex: initial;
+  cursor: pointer;
+}
+
+#daftar .kartu:hover,
+#daftar .kartu:focus-visible,
+#daftar .kartu.terpilih {
+  border-color: var(--color-primary);
+}
+
+#detail-film {
+  width: 100%;
+  flex: initial;
+}
+
+#detail-film img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+}

@@ -1,9 +1,29 @@
 
+
 export const daftarFilm = [
-    { judul: "Godzilla Minus One", tahun: 2023, genre: "Action" },
-    { judul: "Scream", tahun: 1996, genre: "Horror, Mystery" },
-    { judul: "Halloween", tahun: 1978, genre: "Horror" }
+    {
+        judul: "Godzilla Minus One",
+        tahun: 2023,
+        genre: "Action",
+        gambar: "Godzilla minus one.jpeg",
+        deskripsi: "Godzilla mengancam Jepang setelah perang."
+    },
+    {
+        judul: "Scream",
+        tahun: 1996,
+        genre: "Horror, Mystery",
+        gambar: "Scream.jpeg",
+        deskripsi: "Sekelompok remaja diteror oleh pembunuh bertopeng."
+    },
+    {
+        judul: "Halloween",
+        tahun: 1978,
+        genre: "Horror",
+        gambar: "Halloween.jpeg",
+        deskripsi: "Michael Myers kembali meneror pada malam Halloween."
+    }
 ];
+
 
 const profil = {
     nama: "Ananda Farrel Saputra",

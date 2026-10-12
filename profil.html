@@ -3,12 +3,9 @@
 <html lang="id">
 <head>
 
-  <title>Film Favorite Saya</title>
-
-       <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Judul halaman Anda</title>
+  <title>Film Favorite Saya</title>
  
   <!-- urutan ini yang benar: token -> dasar -> tata letak -> komponen -> tema -->
   <link rel="stylesheet" href="tokens.css">
@@ -48,18 +45,22 @@
 
   <section class="sisi">
 
-    <section id="Bagian-1">
-      <h2>Daftar Film</h2>
 
-      
-<div id="filter">
-  <button type="button" data-kategori="semua">Semua</button>
-  <button type="button" data-kategori="Action">Action</button>
-  <button type="button" data-kategori="Horror">Horror</button>
-  <button type="button" data-kategori="Mystery">Mystery</button>
-</div>
+    
+<section id="Bagian-1">
+  <h2>Genre</h2>
 
-<ul id="daftar"></ul>
+  <div id="filter">
+    <button type="button" data-kategori="semua">Semua</button>
+    <button type="button" data-kategori="Action">Action</button>
+    <button type="button" data-kategori="Horror">Horror</button>
+    <button type="button" data-kategori="Mystery">Mystery</button>
+  </div>
+
+  <h2>Daftar Film</h2>
+
+  <ul id="daftar"></ul>
+
 
 <p id="kosong" hidden>
   Tidak ada film dalam kategori ini.
@@ -69,49 +70,44 @@
     <section id="Bagian-2">
       <h2>Rating Saya</h2>
 
-      <form id="form-rating" action="/simpan" method="post">
+      
+<form id="form-rating" action="/simpan" method="post" novalidate>
 
-        <p>
-          <label for="nama">Nama</label>
-          <input type="text" id="nama" name="nama" required>
-        </p>
+  <p>
+    <label for="nama">Nama</label>
+    <input type="text" id="nama" name="nama" required
+           aria-describedby="nama-galat">
+    <small id="nama-galat" class="pesan-galat" hidden></small>
+  </p>
 
-        <p>
-          <label for="rating">Rating (1-10)</label>
-          <input type="number" id="rating" name="rating" min="1" max="10" required>
-        </p>
+  <p>
+    <label for="rating">Rating (1-10)</label>
+    <input type="number" id="rating" name="rating"
+           min="1" max="10" required
+           aria-describedby="rating-galat">
+    <small id="rating-galat" class="pesan-galat" hidden></small>
+  </p>
 
-        <p>
-          <label for="komentar">Komentar</label>
-          <input type="text" id="komentar" name="komentar">
-        </p>
+  <p>
+    <label for="komentar">Komentar</label>
+    <input type="text" id="komentar" name="komentar"
+           aria-describedby="komentar-galat">
+    <small id="komentar-galat" class="pesan-galat" hidden></small>
+  </p>
 
-        <button type="submit">Simpan</button>
+  <button type="submit">Simpan</button>
 
-      </form>
+</form>
+
     </section>
 
   </section>
 
-  <section class="kartu">
+  <section id="detail-film" class="kartu" aria-live="polite">
+  <p>Pilih film untuk melihat detailnya.</p>
+</section>
 
-    <figure>
-      <img src="Halloween.jpeg"
-           alt="Poster film Halloween(1978)"
-           width="520"
-           height="500"
-           loading="lazy">
-      <figcaption>Poster film favorite</figcaption>
-    </figure>
-
-    <h2>Deskripsi Film</h2>
-
-    <p>
-      Halloween adalah film horor tahun 1978 yang menceritakan
-      Michael Myers dan kejadian yang terjadi pada malam Halloween.
-    </p>
-
-  </section>
+ 
 
 </main>
 

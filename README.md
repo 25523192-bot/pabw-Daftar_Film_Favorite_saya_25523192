@@ -80,3 +80,8 @@ AI digunakan sebagai bantuan untuk memahami materi, penempatan kode, dan pengece
 AI digunakan sebagai bantuan dalam memahami materi dan mengecek kode selama pengerjaan Worksheet P8.
 
 Pengerjaan, pengujian kode, dan penyesuaian data dilakukan sendiri.
+
+
+## Pertemuan 9 — Front-end Foundation (DOM, Event, dan Interaktivitas)
+mempelajari DOM, event, filter film, dan validasi form. AI digunakan untuk membantu memahami materi dan mencari kesalahan kode.
+
