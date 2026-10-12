@@ -51,46 +51,25 @@
     <section id="Bagian-1">
       <h2>Daftar Film</h2>
 
-      <div class="table-wrap">
-        <table>
-        <caption>Film Favorite</caption>
-        <thead>
-          <tr>
-            <th scope="col">Judul</th>
-            <th scope="col">Tahun</th>
-            <th scope="col">Genre</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Godzilla Minus One</td>
-            <td>2023</td>
-            <td>Action</td>
-          </tr>
-
-          <tr>
-            <td>Scream</td>
-            <td>1996</td>
-            <td>Horror,Mystery</td>
-          </tr>
-
-          <tr>
-            <td>Halloween</td>
-            <td>1978</td>
-            <td>horror</td>
-          </tr>
-        </tbody>
-      </table>
-
       
-      </div>
-    </section>
+<div id="filter">
+  <button type="button" data-kategori="semua">Semua</button>
+  <button type="button" data-kategori="Action">Action</button>
+  <button type="button" data-kategori="Horror">Horror</button>
+  <button type="button" data-kategori="Mystery">Mystery</button>
+</div>
+
+<ul id="daftar"></ul>
+
+<p id="kosong" hidden>
+  Tidak ada film dalam kategori ini.
+</p>
+</section>
 
     <section id="Bagian-2">
       <h2>Rating Saya</h2>
 
-      <form action="/simpan" method="post">
+      <form id="form-rating" action="/simpan" method="post">
 
         <p>
           <label for="nama">Nama</label>
@@ -144,6 +123,7 @@
   </div>
   
   <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/dom.js"></script>
   
 </body>
 </html>
