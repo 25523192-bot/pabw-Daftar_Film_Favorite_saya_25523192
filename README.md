@@ -85,3 +85,8 @@ Pengerjaan, pengujian kode, dan penyesuaian data dilakukan sendiri.
 ## Pertemuan 9 — Front-end Foundation (DOM, Event, dan Interaktivitas)
 mempelajari DOM, event, filter film, dan validasi form. AI digunakan untuk membantu memahami materi dan mencari kesalahan kode.
 
+## Pertemuan 10 — Front-end Foundation (JavaScript Asinkron: fetch, Promise, dan JSON)
+
+menambahkan pengambilan data film dari JSON menggunakan fetch(), async/await, try/catch, serta penanganan status memuat, gagal, dan kosong.
+
+Penggunaan AI: AI membantu menjelaskan konsep, memberikan referensi kode, dan memeriksa error. Saya menerapkan perubahan dan menguji hasilnya di browser.
