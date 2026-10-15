@@ -71,4 +71,17 @@ const urutFilm = [...daftarFilm].sort((a, b) => a.tahun - b.tahun);
 console.table(urutFilm);
 console.table(daftarFilm);
 
-ambilProyek().then((daftar) => console.log(daftar));
+
+async function ujiAmbilProyek() {
+    try {
+        const daftar = await ambilProyek();
+        console.log(daftar);
+    } catch (galat) {
+        const pesan = document.querySelector('#kosong');
+        pesan.textContent =
+            'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.';
+        pesan.hidden = false;
+    }
+}
+
+ujiAmbilProyek();
