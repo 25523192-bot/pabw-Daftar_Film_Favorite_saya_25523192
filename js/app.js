@@ -76,6 +76,14 @@ async function ujiAmbilProyek() {
     try {
         const daftar = await ambilProyek();
         console.log(daftar);
+        console.log(daftar[0].judul);
+
+const badan = JSON.stringify({
+    judul: 'Judul contoh',
+    kategori: 'web'
+});
+
+console.log(typeof badan);
     } catch (galat) {
         const pesan = document.querySelector('#kosong');
         pesan.textContent =
