@@ -1,4 +1,5 @@
 
+import { ambilProyek } from './api.js';
 
 export const daftarFilm = [
     {
@@ -70,4 +71,4 @@ const urutFilm = [...daftarFilm].sort((a, b) => a.tahun - b.tahun);
 console.table(urutFilm);
 console.table(daftarFilm);
 
-
+ambilProyek().then((daftar) => console.log(daftar));

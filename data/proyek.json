@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "judul": "Godzilla Minus One",
+    "tahun": 2023,
+    "genre": "Action",
+    "gambar": "Godzilla minus one.jpeg",
+    "deskripsi": "Godzilla mengancam Jepang setelah perang."
+  },
+  {
+    "id": "wazzzaaa",
+    "judul": "Scream",
+    "tahun": 1996,
+    "genre": "Horror, Mystery",
+    "gambar": "Scream.jpeg",
+    "deskripsi": "Sekelompok remaja diteror oleh pembunuh bertopeng."
+  },
+  {
+    "id": 3,
+    "judul": "Halloween",
+    "tahun": 1978,
+    "genre": "Horror",
+    "gambar": "Halloween.jpeg",
+    "deskripsi": "Michael Myers kembali meneror pada malam Halloween."
+  }
+]
