@@ -1,29 +1,14 @@
 
 import { ambilProyek } from './api.js';
 
-export const daftarFilm = [
-    {
-        judul: "Godzilla Minus One",
-        tahun: 2023,
-        genre: "Action",
-        gambar: "Godzilla minus one.jpeg",
-        deskripsi: "Godzilla mengancam Jepang setelah perang."
-    },
-    {
-        judul: "Scream",
-        tahun: 1996,
-        genre: "Horror, Mystery",
-        gambar: "Scream.jpeg",
-        deskripsi: "Sekelompok remaja diteror oleh pembunuh bertopeng."
-    },
-    {
-        judul: "Halloween",
-        tahun: 1978,
-        genre: "Horror",
-        gambar: "Halloween.jpeg",
-        deskripsi: "Michael Myers kembali meneror pada malam Halloween."
-    }
-];
+import {
+    render,
+    pasangFilter,
+    aturMemuat,
+    tampilkanGalat
+} from './dom.js';
+
+
 
 
 const profil = {
@@ -52,44 +37,26 @@ console.log(buatPerkenalan(profil));
 const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(formatKeahlian(profil.keahlian));
-console.table(daftarFilm);
-
-const judulFilm = daftarFilm.map((film) => film.judul);
-
-console.table(judulFilm);
-
-const filmHorror = daftarFilm.filter((film) => film.genre.includes("Horror"));
-
-console.table(filmHorror);
-
-const filmPilihan = daftarFilm.find((film) => film.judul === "Scream");
-
-console.log(filmPilihan);
-
-const urutFilm = [...daftarFilm].sort((a, b) => a.tahun - b.tahun);
-
-console.table(urutFilm);
-console.table(daftarFilm);
 
 
-async function ujiAmbilProyek() {
+
+
+async function muat() {
+    aturMemuat(true);
+
     try {
         const daftar = await ambilProyek();
-        console.log(daftar);
-        console.log(daftar[0].judul);
 
-const badan = JSON.stringify({
-    judul: 'Judul contoh',
-    kategori: 'web'
-});
-
-console.log(typeof badan);
+        pasangFilter(daftar);
+        render(daftar);
     } catch (galat) {
-        const pesan = document.querySelector('#kosong');
-        pesan.textContent =
-            'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.';
-        pesan.hidden = false;
+        tampilkanGalat(
+            'Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman.'
+        );
+        console.error(galat.message);
+    } finally {
+        aturMemuat(false);
     }
 }
 
-ujiAmbilProyek();
+muat();

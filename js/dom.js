@@ -1,9 +1,10 @@
 
-import { daftarFilm } from "./app.js";
+
 
 const wadah = document.querySelector("#daftar");
 const barisFilter = document.querySelector("#filter");
 const kosong = document.querySelector("#kosong");
+const muatEl = document.querySelector("#muat");
 
 const formRating = document.querySelector("#form-rating");
 const inputNama = document.querySelector("#nama");
@@ -80,10 +81,11 @@ function renderDetail(film) {
 
 
 
-function render(daftar) {
+export function render(daftar) {
   wadah.textContent = "";
 
   if (daftar.length === 0) {
+    kosong.textContent = "Belum ada data.";
     kosong.hidden = false;
     renderDetail(null);
     return;
@@ -101,39 +103,55 @@ function render(daftar) {
 }
 
 
-render(daftarFilm);
 
 
-let kategoriAktif = "semua";
 
-const tombolSemua = barisFilter.querySelector(
-  'button[data-kategori="semua"]'
-);
 
-tombolSemua?.classList.add("aktif");
+export function aturMemuat(aktif) {
+  muatEl.hidden = !aktif;
+}
 
-barisFilter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
+export function tampilkanGalat(pesan) {
+  wadah.textContent = "";
+  kosong.textContent = pesan;
+  kosong.hidden = false;
+}
 
-  if (!tombol || !barisFilter.contains(tombol)) {
-    return;
-  }
 
-  kategoriAktif = tombol.dataset.kategori;
+export function pasangFilter(daftar) {
+  
+  let kategoriAktif = "semua";
 
-  barisFilter.querySelectorAll("button").forEach((button) => {
-    button.classList.toggle("aktif", button === tombol);
+  const tombolSemua = barisFilter.querySelector(
+    'button[data-kategori="semua"]'
+  );
+
+
+  tombolSemua?.classList.add("aktif");
+
+  barisFilter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button");
+
+    if (!tombol || !barisFilter.contains(tombol)) {
+      return;
+    }
+
+    kategoriAktif = tombol.dataset.kategori;
+
+    barisFilter.querySelectorAll("button").forEach((button) => {
+      button.classList.toggle("aktif", button === tombol);
+    });
+
+    const hasilFilter =
+      kategoriAktif === "semua"
+        ? daftar
+        : daftar.filter((film) =>
+            film.genre.includes(kategoriAktif)
+          );
+
+    render(hasilFilter);
   });
-
-  const hasilFilter =
-    kategoriAktif === "semua"
-      ? daftarFilm
-      : daftarFilm.filter((film) =>
-          film.genre.includes(kategoriAktif)
-        );
-
-  render(hasilFilter);
-});
+}
 
 
 
