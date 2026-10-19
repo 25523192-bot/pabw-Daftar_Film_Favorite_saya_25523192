@@ -97,4 +97,4 @@ Proyek PABW Pertemuan 11 untuk menampilkan dan memfilter film favorit.
 
 Aplikasi menggunakan JavaScript modules dan localStorage untuk menyimpan kategori dan film favorit.
 
-Penggunaan AI: AI membantu memahami dan memperbaiki kode. Saya menerapkan dan menguji kode di VS Code dan browser.
+Penggunaan AI: AI membantu memahami dan memperbaiki kode. Saya menerapkan dan menguji kode di VS Code dan browser
