@@ -1,27 +1,27 @@
 
-import { state } from "./state.js";
-import { render, renderDetail } from "./dom.js";
+import {
+  pilihFilm,
+  pilihKategori,
+  tambahFavorit
+} from "./state.js";
 
 export function pasangEventFilm() {
   const wadah = document.querySelector("#daftar");
   const barisFilter = document.querySelector("#filter");
 
   // Memilih film
-  wadah.addEventListener("click", (event) => {
+    wadah.addEventListener("click", (event) => {
+    const tombolFavorit = event.target.closest(".favorit");
+
+    if (tombolFavorit) {
+      tambahFavorit(tombolFavorit.dataset.id);
+      return;
+    }
+
     const kartu = event.target.closest(".kartu");
     if (!kartu || !wadah.contains(kartu)) return;
 
-    const film = state.daftarProyek.find(
-      (item) => item.judul === kartu.dataset.judul
-    );
-    if (!film) return;
-
-    state.filmTerpilih = film;
-    renderDetail(film);
-
-    wadah.querySelectorAll(".kartu").forEach((item) => {
-      item.classList.toggle("terpilih", item === kartu);
-    });
+    pilihFilm(kartu.dataset.judul);
   });
 
   // Dukungan keyboard
@@ -37,25 +37,14 @@ export function pasangEventFilm() {
 
   // Filter genre
   barisFilter.addEventListener("click", (event) => {
-    const tombol = event.target.closest("button[data-kategori]");
-    if (!tombol || !barisFilter.contains(tombol)) return;
+  const tombol = event.target.closest("button[data-kategori]");
 
-    state.kategoriAktif = tombol.dataset.kategori;
+  if (!tombol || !barisFilter.contains(tombol)) {
+    return;
+  }
 
-    barisFilter.querySelectorAll("button[data-kategori]").forEach((item) => {
-      item.classList.toggle("aktif", item === tombol);
-    });
-
-    const hasil = state.kategoriAktif === "semua"
-      ? state.daftarProyek
-      : state.daftarProyek.filter((film) =>
-          film.genre
-            .split(",")
-            .some((genre) => genre.trim() === state.kategoriAktif)
-        );
-
-    render(hasil);
-  });
+  pilihKategori(tombol.dataset.kategori);
+});
 
 
   
