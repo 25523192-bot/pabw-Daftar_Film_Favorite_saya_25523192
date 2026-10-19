@@ -1,6 +1,6 @@
 
 import { ambilProyek } from "./api.js";
-import { state, isiProyek } from "./state.js";
+import { isiProyek, muat, pulihkan } from "./state.js";
 
 import {
   aturMemuat,
@@ -11,11 +11,12 @@ import {
 import { pasangEventFilm } from "./events.js";
 
 async function mulai() {
+  pulihkan(muat());
+  pasangEventFilm();
   aturMemuat(true);
 
   try {
-    pasangEventFilm();
-    isiProyek(await ambilProyek());
+   isiProyek(await ambilProyek());
   } catch (galat) {
     tampilkanGalat(
       "Data gagal dimuat. Periksa koneksi, lalu muat ulang halaman."

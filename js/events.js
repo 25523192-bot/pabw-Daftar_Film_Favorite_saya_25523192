@@ -2,12 +2,19 @@
 import {
   pilihFilm,
   pilihKategori,
-  tambahFavorit
+  tambahFavorit,
+  aturUlang
 } from "./state.js";
 
 export function pasangEventFilm() {
   const wadah = document.querySelector("#daftar");
   const barisFilter = document.querySelector("#filter");
+
+    const tombolAturUlang = document.querySelector("#atur-ulang");
+
+  tombolAturUlang?.addEventListener("click", () => {
+    aturUlang();
+  });
 
   // Memilih film
     wadah.addEventListener("click", (event) => {
