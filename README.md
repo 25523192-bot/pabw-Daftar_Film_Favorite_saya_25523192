@@ -90,3 +90,11 @@ mempelajari DOM, event, filter film, dan validasi form. AI digunakan untuk memba
 menambahkan pengambilan data film dari JSON menggunakan fetch(), async/await, try/catch, serta penanganan status memuat, gagal, dan kosong.
 
 Penggunaan AI: AI membantu menjelaskan konsep, memberikan referensi kode, dan memeriksa error. Saya menerapkan perubahan dan menguji hasilnya di browser.
+
+
+## Pertemuan 11 — Front-end Foundation (Modul, State, dan Penyimpanan Klien)
+Proyek PABW Pertemuan 11 untuk menampilkan dan memfilter film favorit.
+
+Aplikasi menggunakan JavaScript modules dan localStorage untuk menyimpan kategori dan film favorit.
+
+Penggunaan AI: AI membantu memahami dan memperbaiki kode. Saya menerapkan dan menguji kode di VS Code dan browser.
