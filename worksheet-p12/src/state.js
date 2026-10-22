@@ -1,89 +1,81 @@
+import { reactive } from 'vue'
 
-import { render } from "./dom.js";
+const KUNCI = 'pabw-p11'
+const VERSI = 2
 
-const KUNCI = "pabw-p11";
-const VERSI = 2;
-
-export const state = {
+export const state = reactive({
   daftarProyek: [],
-  kategoriAktif: "semua",
+  kategoriAktif: 'semua',
   favorit: [],
-  filmTerpilih: null
-};
+  filmTerpilih: null,
+  memuat: true,
+  galat: ''
+})
 
 export function isiProyek(daftar) {
-  state.daftarProyek = daftar;
-  render(state);
+  state.daftarProyek = daftar
 }
 
 export function pilihKategori(kategori) {
-  state.kategoriAktif = kategori;
-  simpan(state);
-  render(state);
+  state.kategoriAktif = kategori
 }
 
 export function pilihFilm(judul) {
   const film = state.daftarProyek.find(
     (item) => item.judul === judul
-  );
+  )
 
-  if (!film) return;
+  if (!film) return
 
-  state.filmTerpilih = film;
-   simpan(state);
-  render(state);
+  state.filmTerpilih = film
 }
 
 export function tambahFavorit(id) {
-  const idTeks = String(id);
+  const idTeks = String(id)
 
-  if (state.favorit.includes(idTeks)) return;
+  if (state.favorit.includes(idTeks)) return
 
-  state.favorit = [...state.favorit, idTeks];
-   simpan(state);
-  render(state);
+  state.favorit = [...state.favorit, idTeks]
 }
 
-
-export function simpan(state) {
+export function simpan(nilai = state) {
   const isi = {
     versi: VERSI,
-    kategoriAktif: state.kategoriAktif,
-    favorit: state.favorit
-  };
+    kategoriAktif: nilai.kategoriAktif,
+    favorit: nilai.favorit
+  }
 
-  localStorage.setItem(KUNCI, JSON.stringify(isi));
+  localStorage.setItem(KUNCI, JSON.stringify(isi))
 }
-
 
 export function muat() {
   try {
-    const isi = JSON.parse(localStorage.getItem(KUNCI));
+    const isi = JSON.parse(localStorage.getItem(KUNCI))
 
     if (isi?.versi !== VERSI) {
-      localStorage.removeItem(KUNCI);
-      return null;
+      localStorage.removeItem(KUNCI)
+      return null
     }
 
-    return isi;
+    return isi
   } catch {
-    localStorage.removeItem(KUNCI);
-    return null;
+    localStorage.removeItem(KUNCI)
+    return null
   }
 }
 
-
 export function pulihkan(isi) {
-  if (!isi) return;
+  if (!isi) return
 
-  state.kategoriAktif = isi.kategoriAktif;
-  state.favorit = isi.favorit;
+  state.kategoriAktif = isi.kategoriAktif
+  state.favorit = Array.isArray(isi.favorit)
+    ? isi.favorit
+    : []
 }
 
 export function aturUlang() {
-  localStorage.removeItem(KUNCI);
-  state.kategoriAktif = "semua";
-  state.favorit = [];
-  render(state);
+  state.kategoriAktif = 'semua'
+  state.favorit = []
+  state.filmTerpilih = null
+  localStorage.removeItem(KUNCI)
 }
-

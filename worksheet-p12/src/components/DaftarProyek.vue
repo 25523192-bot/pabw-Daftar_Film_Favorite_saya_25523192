@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-import { state } from '../state.js'
+import { state, pilihFilm, tambahFavorit } from '../state.js'
 import { saring } from '../data.js'
 
 const tampil = computed(() =>
@@ -15,10 +15,11 @@ const tampil = computed(() =>
 
   <ul v-else id="daftar">
     <li
-      v-for="film in tampil"
-      :key="film.id"
-      class="kartu"
-    >
+  v-for="film in tampil"
+  :key="film.id"
+  class="kartu"
+  @click="pilihFilm(film.judul)"
+>
       <h3 class="kartu__judul">{{ film.judul }}</h3>
       <p>Tahun: {{ film.tahun }}</p>
       <p>Genre: {{ film.genre }}</p>
@@ -27,12 +28,14 @@ const tampil = computed(() =>
       </p>
 
       <button
-        type="button"
-        class="favorit"
-        :aria-label="`Favorit ${film.judul}`"
-      >
-        ☆
-      </button>
+  type="button"
+  class="favorit"
+  :aria-label="`Favorit ${film.judul}`"
+  :aria-pressed="state.favorit.includes(String(film.id))"
+  @click.stop="tambahFavorit(film.id)"
+>
+  {{ state.favorit.includes(String(film.id)) ? '★' : '☆' }}
+</button>
     </li>
   </ul>
 </template>
