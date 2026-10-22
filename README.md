@@ -98,3 +98,11 @@ Proyek PABW Pertemuan 11 untuk menampilkan dan memfilter film favorit.
 Aplikasi menggunakan JavaScript modules dan localStorage untuk menyimpan kategori dan film favorit.
 
 Penggunaan AI: AI membantu memahami dan memperbaiki kode. Saya menerapkan dan menguji kode di VS Code dan browser
+
+
+## Pertemuan 12 —  Front-end Foundation (Build Tooling, npm, dan Framework SPA)
+
+Proyek PABW Pertemuan 12 untuk menampilkan dan memfilter film favorit menggunakan Vue.
+Apliksi menggunakan komponen Vue dan localStorage untuk menyimpan kategori dan film favorit.
+
+Penggunaan AI: AI membantu memahami worksheet dan memperbaiki kode. Saya menerapkan dan menguji kode di VS Code dan browser.
