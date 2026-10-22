@@ -1,7 +1,111 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld />
+  <div class="page">
+    <header>
+      <div class="header-baris">
+        <h1>Film Favorite Saya</h1>
+
+        <nav aria-label="Navigasi Utama">
+          <ul>
+            <li><a href="#Bagian-1">Daftar Film</a></li>
+            <li><a href="#Bagian-2">Rating saya</a></li>
+            <li><a href="#footer">Footer</a></li>
+
+            <input
+              type="checkbox"
+              id="tema"
+              class="pengalih-tema"
+            />
+            <label for="tema" class="tombol-tema">
+              Tema gelap
+            </label>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="isi">
+      <section class="sisi">
+        <section id="Bagian-1">
+          <h2>Genre</h2>
+
+          <div id="filter">
+            <button type="button" data-kategori="semua">Semua</button>
+            <button type="button" data-kategori="Action">Action</button>
+            <button type="button" data-kategori="Horror">Horror</button>
+            <button type="button" data-kategori="Mystery">Mystery</button>
+          </div>
+
+          <button type="button" id="atur-ulang">Atur ulang</button>
+
+          <h2>Daftar Film</h2>
+
+          <ul id="daftar"></ul>
+
+          <p id="kosong" hidden>
+            Tidak ada film dalam kategori ini.
+          </p>
+
+          <p id="muat" hidden>Memuat data...</p>
+        </section>
+
+        <section id="Bagian-2">
+          <h2>Rating Saya</h2>
+
+          <form
+            id="form-rating"
+            action="/simpan"
+            method="post"
+            novalidate
+          >
+            <p>
+              <label for="nama">Nama</label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                required
+                aria-describedby="nama-galat"
+              />
+              <small id="nama-galat" class="pesan-galat" hidden></small>
+            </p>
+
+            <p>
+              <label for="rating">Rating (1-10)</label>
+              <input
+                type="number"
+                id="rating"
+                name="rating"
+                min="1"
+                max="10"
+                required
+                aria-describedby="rating-galat"
+              />
+              <small id="rating-galat" class="pesan-galat" hidden></small>
+            </p>
+
+            <p>
+              <label for="komentar">Komentar</label>
+              <input
+                type="text"
+                id="komentar"
+                name="komentar"
+                aria-describedby="komentar-galat"
+              />
+              <small id="komentar-galat" class="pesan-galat" hidden></small>
+            </p>
+
+            <button type="submit">Simpan</button>
+          </form>
+        </section>
+      </section>
+
+      <section id="detail-film" class="kartu" aria-live="polite">
+        <p>Pilih film untuk melihat detailnya.</p>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>Ananda Farrel Saputra-25523192-2026</p>
+    </footer>
+  </div>
 </template>
